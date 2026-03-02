@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – NeonGlide</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan:    #00f5ff;
+      --magenta: #ff00c8;
+      --purple:  #9b00ff;
+      --bg:      #050508;
+      --card-bg: rgba(255,255,255,0.03);
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: #e0e0e0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Subtle animated background grid ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,245,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,245,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      animation: gridScroll 20s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes gridScroll {
+      from { background-position: 0 0; }
+      to   { background-position: 0 60px; }
+    }
+
+    /* ── Layout ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px 40px;
+      gap: 48px;
+    }
+
+    /* ── Heading ── */
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, var(--cyan), var(--magenta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 12px rgba(0,245,255,0.5));
+      text-align: center;
+    }
+
+    /* ── Divider ── */
+    .neon-line {
+      width: min(480px, 90%);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.4;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid rgba(0,245,255,0.12);
+      border-radius: 16px;
+      padding: 36px 40px;
+      width: 100%;
+      max-width: 600px;
+      backdrop-filter: blur(6px);
+    }
+
+    .card h2 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: rgba(224,224,224,0.8);
+      line-height: 1.7;
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      font-size: 0.88rem;
+      color: var(--magenta);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    .back-link:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      font-size: 0.78rem;
+      color: rgba(224,224,224,0.25);
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <h1>Privacy Policy</h1>
+
+    <div class="neon-line"></div>
+
+    <div class="card">
+      <h2>Data Collection</h2>
+      <p>This app does not collect, transmit, or share any user data.</p>
+    </div>
+
+    <div class="neon-line"></div>
+
+    <a class="back-link" href="index.html">&larr; Back to NeonGlide</a>
+
+    <footer>&copy; <span id="yr"></span> NeonGlide. All rights reserved.</footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
