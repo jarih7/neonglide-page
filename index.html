@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeonGlide – Support</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d14;
+      --surface: #14141f;
+      --border: #2a2a3d;
+      --neon: #b87cff;
+      --neon2: #7cf0ff;
+      --text: #e8e8f4;
+      --muted: #888899;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: var(--neon); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--neon), var(--neon2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-links a {
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      background: radial-gradient(ellipse at 50% 0%, #1e1040 0%, var(--bg) 70%);
+    }
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #6c27c0, #1a9db5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 0 40px rgba(184, 124, 255, 0.4);
+      font-size: 3rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--neon), var(--neon2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, var(--neon), var(--neon2));
+      color: #0d0d14;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+
+    /* ── SECTIONS ── */
+    section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    section + section {
+      border-top: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+    h2 span {
+      background: linear-gradient(90deg, var(--neon), var(--neon2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── FAQ ── */
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .faq-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--neon);
+    }
+    .faq-item p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* ── CONTACT ── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .contact-email {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--neon2);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">NeonGlide</span>
+    <div class="nav-links">
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="app-icon">🎮</div>
+    <h1>NeonGlide</h1>
+    <p>We're here to help. Find answers to common questions or reach out to our support team.</p>
+    <a href="#contact" class="btn">Get Support</a>
+  </div>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2><span>Frequently Asked</span> Questions</h2>
+
+    <div class="faq-item">
+      <h3>How do I get started?</h3>
+      <p>Download NeonGlide from the App Store, launch the app, and follow the on-screen tutorial to jump right in.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is NeonGlide free to play?</h3>
+      <p>NeonGlide is free to download. Some optional in-app purchases may be available to enhance your experience.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>My progress was lost. What can I do?</h3>
+      <p>Make sure you're signed in with the same Apple ID or Game Center account you used previously. If the issue persists, please contact us and we'll do our best to help.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I report a bug or a problem?</h3>
+      <p>Please reach out via the contact form below or send us an email with a description of the issue and your device model. Screenshots or screen recordings are always welcome!</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I request a refund?</h3>
+      <p>Refunds for App Store purchases are handled by Apple. Visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> to submit a refund request.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Where can I find the Privacy Policy?</h3>
+      <p>You can read our full Privacy Policy <a href="privacy.html">here</a>.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2><span>Contact</span> Support</h2>
+    <div class="contact-card">
+      <p>Can't find what you're looking for? Send us an email and we'll get back to you as soon as possible.</p>
+      <a class="contact-email" href="mailto:support@neonglide.app">support@neonglide.app</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="year"></span> NeonGlide. All rights reserved. &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
