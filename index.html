@@ -207,6 +207,14 @@
       letter-spacing: 0.04em;
       text-align: center;
     }
+
+    .footer-link {
+      color: inherit;
+      text-decoration: none;
+      opacity: 0.6;
+    }
+
+    .footer-link:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -273,7 +281,11 @@
 
     <div class="neon-line"></div>
 
-    <footer>&copy; <span id="yr"></span> NeonGlide. All rights reserved.</footer>
+    <footer>
+      &copy; <span id="yr"></span> NeonGlide. All rights reserved.
+      &nbsp;·&nbsp;
+      <a href="privacy.html" class="footer-link">Privacy Policy</a>
+    </footer>
   </div>
 
   <script>
