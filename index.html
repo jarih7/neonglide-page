@@ -67,10 +67,13 @@
     .icon-wrapper {
       width: 120px;
       height: 120px;
+      flex-shrink: 0;
+    }
+
+    .icon-wrapper.loaded {
       filter:
     drop-shadow(0 0 10px var(--cyan))
     drop-shadow(0 0 30px rgba(0, 245, 255, 0.3));
-      flex-shrink: 0;
     }
 
     .icon-wrapper img {
@@ -290,9 +293,13 @@
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
-    // Show SVG fallback if icon.png fails to load
+    // Apply glow only after the image is decoded so Safari computes
+    // drop-shadow from actual pixels rather than a blank placeholder.
     var icon = document.getElementById('game-icon');
-    icon.addEventListener('error', function () {
+    var wrapper = document.querySelector('.icon-wrapper');
+    icon.decode().then(function () {
+      wrapper.classList.add('loaded');
+    }).catch(function () {
       icon.style.display = 'none';
       var fallback = document.getElementById('icon-fallback');
       if (fallback) fallback.style.display = 'flex';
